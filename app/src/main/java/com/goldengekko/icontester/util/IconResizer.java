@@ -1,4 +1,4 @@
-package com.goldengekko.icontester;
+package com.goldengekko.icontester.util;
 
 import android.app.Activity;
 import android.content.res.Resources;

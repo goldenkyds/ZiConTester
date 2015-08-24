@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.goldengekko.icontester.IconResizer;
+import com.goldengekko.icontester.util.IconResizer;
 import com.goldengekko.icontester.R;
 
 import java.util.List;
@@ -47,18 +47,18 @@ public class MainAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Holder holder = new Holder();
-        if(convertView == null){
-            convertView = LayoutInflater.from(mActivity).inflate(R.layout.icon_layout,parent,false);
-            holder.icon = (ImageView)convertView.findViewById(R.id.icon_id);
-            holder.name = (TextView)convertView.findViewById(R.id.name_id);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(mActivity).inflate(R.layout.icon_layout, parent, false);
+            holder.icon = (ImageView) convertView.findViewById(R.id.icon_id);
+            holder.name = (TextView) convertView.findViewById(R.id.name_id);
             convertView.setTag(holder);
-        }else {
-            holder = (Holder)convertView.getTag();
+        } else {
+            holder = (Holder) convertView.getTag();
         }
-        if(position == 0){
+        if (position == 0) {
             holder.name.setText(R.string.add_icon);
             holder.icon.setImageDrawable(mDrawables.get(position));
-        }else {
+        } else {
             holder.name.setText(R.string.zi_con);
             holder.icon.setImageDrawable(IconResizer.getIcon(mActivity, mDrawables.get(position)));
         }
